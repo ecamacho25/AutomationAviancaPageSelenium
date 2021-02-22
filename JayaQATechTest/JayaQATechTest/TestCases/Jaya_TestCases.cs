@@ -79,8 +79,6 @@ namespace JayaTestCases.TestCases
             InputInfoAndSearchItineraries("Bogota", "BOG", "Cartagena", "CTG");
 
             OrderItineraries();
-
-            TakeScreenshot();
         }
 
         #region Private Methods
