@@ -46,7 +46,7 @@ namespace JayaTestCases.TestCases
             _checkItinerariesPage = new CheckItinerariesPage(_driver);
         }
 
-        [OneTimeSetUp]
+        [SetUp]
         public void OneTimeSetUp()
         {
             _homePage.OpenHomePage();
