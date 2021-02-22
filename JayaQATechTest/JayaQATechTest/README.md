@@ -17,16 +17,19 @@ To install the project you need to follow these steps:
 2. In the field repository location you must add the following url: https://github.com/ecamacho25/JayaQATechTest.git
 3. Click Clone
 4. You can see in the project the file packages.config, then right click over it and select the option "migrate packages.config to  PackageReference""
-5. 
+5. A modal will appear, then Click Ok.
+6. Build the solution and check no errors should be appear.
 
 
 ##############################
 Run test cases
 ##############################
 
-1. Go to folder TestCases and click in the class: Jaya_TestCases.cs
+1. Go to folder TestCases and open the class: Jaya_TestCases.cs
 2. Right click inside the class and select the option "Run Test(s)"
-3. Now, you can see running the test cases: BookingFlight_FlightIsBookedSuccessfully and SearchFlightAndOrderByDepartTime_FlightsAreOrdered
+3. Go to Test Explorer tab. There you can see the test cases: BookingFlight_FlightIsBookedSuccessfully and SearchFlightAndOrderByDepartTime_FlightsAreOrdered without execution yet.
+4. Click in the icon "Run" (green play icon) to execute each test case.
+5. Notice the test cases now are running.
 
 "# JayaQATechTest" 
 "# JayaTestCases" 
