@@ -74,23 +74,13 @@ namespace JayaTestCases.TestCases
         [Test]
         public void SearchFlightAndOrderByDepartTime_FlightAreOrdered()
         {
-            _homePage.ClickAndOpenMenu();
+            GoToFlightSchedulePage();
 
-            _homePage.ClicklinkHorariosVuelo();
+            InputInfoAndSearchItineraries("Bogota", "BOG", "Cartagena", "CTG");
 
-            _flightSchedulePage.IsFlightSchedulePageIsLoaded().Should().BeTrue();
+            OrderItineraries();
 
-            _flightSchedulePage.InputFlightCities("Bogota", "BOG", "Cartagena", "CTG");
-
-            _flightSchedulePage.SelectDepartDate();
-
-            _flightSchedulePage.SelectReturnDate();
-
-            _flightSchedulePage.ClickSearchScheduleButton();
-
-            _checkItinerariesPage.SwitchToWindowCheckItinerariesAndAssertTitle("Itinerario de vuelos | Avianca");
-
-            _checkItinerariesPage.OrderByDepartTime();
+            TakeScreenshot();
         }
 
         #region Private Methods
@@ -140,6 +130,38 @@ namespace JayaTestCases.TestCases
             _personalInfoPage.ClickSaveInfo();
 
             _personalInfoPage.AssertTitleAfterSaveInfo();
+        }
+        
+         private void GoToFlightSchedulePage()
+        {
+            _homePage.ClickAndOpenMenu();
+
+            _homePage.ClicklinkHorariosVuelo();
+
+            _flightSchedulePage.IsFlightSchedulePageIsLoaded().Should().BeTrue();
+        }
+
+        private void InputInfoAndSearchItineraries(string fromCity, string fromCityCode, string toCity, string toCityCode)
+        {
+            _flightSchedulePage.InputFlightCities(fromCity, fromCityCode, toCity, toCityCode);
+
+            _flightSchedulePage.SelectDepartDate();
+
+            _flightSchedulePage.SelectReturnDate();
+
+            _flightSchedulePage.ClickSearchScheduleButton();
+        }
+
+        private void OrderItineraries()
+        {
+            _checkItinerariesPage.SwitchToWindowCheckItinerariesAndAssertTitle("Itinerario de vuelos | Avianca");
+
+            _checkItinerariesPage.OrderByDepartTime();
+        }
+
+        private void TakeScreenshot()
+        {
+            _checkItinerariesPage.TakeScreenshot();
         }
 
         #endregion
